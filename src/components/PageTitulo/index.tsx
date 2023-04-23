@@ -1,13 +1,26 @@
 import { Text, TouchableOpacity, View } from "react-native"
 import { styles } from "./styles"
-export function PageTitulo() {
-    return(
+import { IPage } from "../../../App"
+
+export function PageTitulo({ setPageI, pagenumber }: IPage) {
+    return (
         <View style={styles.container}>
-        <Text style={styles.text}>Acelera a motoca</Text>
-        <TouchableOpacity>
-            <Text style={styles.text}>{'>>'}</Text>
-        </TouchableOpacity>  
+            {pagenumber == 1 ? (
+                <>
+                    <TouchableOpacity onPress={() => setPageI(pagenumber)}>
+                        <Text style={styles.text}>{'<<'}</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.text}>Tricampeão mundial</Text>
+                </>
+            ) : (
+                <>
+                    <Text style={styles.text}>Acelera a motoca</Text>
+                    <TouchableOpacity onPress={() => setPageI(pagenumber)}>
+                        <Text style={styles.text}>{'>>'}</Text>
+                    </TouchableOpacity>
+                </>
+            )}
         </View>
-       
+
     )
 }

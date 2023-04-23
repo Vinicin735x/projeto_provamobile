@@ -2,15 +2,14 @@ import { StyleSheet } from "react-native";
 import { colors } from "../../styles/colors"
 
 export const styles = StyleSheet.create({
-    listMarker: {
-        margin: 10,
-        marginTop: 60,
-        flexDirection: "row",
+    list: {
+        margin: 20,
+        marginTop: 10,
         alignItems: "center"
     },
-    textMarker: {
+    text: {
         marginLeft: 10,
-        fontSize: 20,
+        fontSize: 30,
         color: colors.white
     }
 })
